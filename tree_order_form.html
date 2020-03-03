@@ -126,10 +126,11 @@
             return
         }
 
-        // TODO - If there are no errors, use a template string to display an order summary in the order summary paragraph
-        orderSummaryParagraph.innerHTML = 'TEST'
+        // DONE - If there are no errors, use a template string to display an order summary in the order summary paragraph
+        orderSummaryParagraph.innerHTML = `<p>${name}</p>
+        <p>${houseNumber} ${streetName}, ${city}, MN ${zipCode}</p>
+        <p>${treeType}</p>`
     })
-
 
 </script>
 

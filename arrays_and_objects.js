@@ -17,10 +17,13 @@ let iss_location = {
     "message": "success"
 };
 
-// TODO Extract the latitude value, and log it to the console.
-console.log()
-// TODO Extract the longitude value, and log it to the console.
-console.log()
+// DONE Extract the latitude value, and log it to the console.
+// Read data from position object within location object
+console.log(iss_location.iss_position.latitude)
+
+// DONE Extract the longitude value, and log it to the console.
+// Read data from position object within location object
+console.log(iss_location.iss_position.longitude)
 
 
 /* b. Use this JavaScript object of exchange rates relative to Euros.
@@ -51,9 +54,14 @@ function convert(euro, country) {
 }
 console.log(convert(100, rates.AUD).toFixed(2))
 
-// TODO write code to identify the currency symbol that has the highest exchange rate compared to Euros.
+// DONE-ISH write code to identify the currency symbol that has the highest exchange rate compared to Euros.
 //    In other words, identify the property with the largest value. the answer is BRL (Brazilian Real) at 3.8959 BRL to 1 Euro.
-// Move on and come back
+
+// Got close thanks to https://stackoverflow.com/questions/11142884/fast-way-to-get-the-min-max-values-among-properties-of-object
+// but can't figure out how to display the corresponded currency symbol instead of the highest value
+let currency = Object.values(rates)
+let max = Math.max(...currency)
+console.log( `Highest currency value: ${max}` )
 
 /* c. Use this JavaScript array of objects of cat owners, and their cats. Source, moderncat.com
  */
@@ -77,7 +85,7 @@ cats_and_owners[4] = {name: "Taylor Swift", cat: "Meredith"}
 
 // DONE write a loop to print each cat owner, and their cat's name, one per line. Use the forEach style.
 
-// Create a function to loop the using a ForEach
+// Create a function to loop the objects within the array using ForEach
 cats_and_owners.forEach(function (element) {
     console.log(`${element.name}'s cat is ${element.cat}`)
 })
@@ -90,8 +98,8 @@ Source http://api.nobelprize.org/v1/prize.json?year=2017
 // DONE print the full name of the Literature Nobel laureate.
 // DONE print the ids of each of the Physics Nobel laureates. Your code should still work without modification if a laureate was added, or removed.
 // DONE write code to print the names of all of the prize categories (So your output would start physics, chemistry, medicine... ).
-// TODO write code to print the total number of prize categories
-// TODO write code to count the total number of laureates from 2017.
+// DONE write code to print the total number of prize categories
+// DONE-ISH write code to count the total number of laureates from 2017.
 //   have a good look at how the JSON is structured, and think about what loop(s) you'll need to write.
 
 
@@ -220,17 +228,30 @@ let nobel_prize_winners_2017 = {
     ]
 };
 
+// Locate name data from within the Literature category's laureates and combine the first and sur names
 console.log(`The 2017 Nobel laureate for Literature was ` + (nobel_prize_winners_2017.prizes[3].laureates[0].firstname)
     + ` ` + (nobel_prize_winners_2017.prizes[3].laureates[0].surname) +`.`)
 
+// Create a function to loop the ids within the physics category using ForEach
 nobel_prize_winners_2017.prizes[0].laureates.forEach(function (element) {
     console.log(`${element.id}`)
 })
 
+// Create a function to loop all the categories within the prizes array using ForEach
 nobel_prize_winners_2017.prizes.forEach(function (element) {
     console.log(`${element.category}`)
 })
 
+// For some reason this was very tricky for me. I'm hoping the correct answer is not a coincidence.
 // Thanks, Stack Overflow!
 // https://stackoverflow.com/questions/2693021/how-to-count-javascript-array-objects
 console.log(Object.keys(nobel_prize_winners_2017.prizes).length)
+
+// As close as I got using slides and Google:
+// for(const prop in nobel_prize_winners_2017.prizes.laureates) {
+//     let count = 0
+//     if (nobel_prize_winners_2017.prizes.laureates.hasOwnProperty(prop)) {
+//         count++
+//         console.log(count)
+//     }
+// }

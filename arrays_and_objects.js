@@ -89,7 +89,7 @@ Source http://api.nobelprize.org/v1/prize.json?year=2017
 
 // DONE print the full name of the Literature Nobel laureate.
 // DONE print the ids of each of the Physics Nobel laureates. Your code should still work without modification if a laureate was added, or removed.
-// TODO write code to print the names of all of the prize categories (So your output would start physics, chemistry, medicine... ).
+// DONE write code to print the names of all of the prize categories (So your output would start physics, chemistry, medicine... ).
 // TODO write code to print the total number of prize categories
 // TODO write code to count the total number of laureates from 2017.
 //   have a good look at how the JSON is structured, and think about what loop(s) you'll need to write.
@@ -227,3 +227,10 @@ nobel_prize_winners_2017.prizes[0].laureates.forEach(function (element) {
     console.log(`${element.id}`)
 })
 
+nobel_prize_winners_2017.prizes.forEach(function (element) {
+    console.log(`${element.category}`)
+})
+
+// Thanks, Stack Overflow!
+// https://stackoverflow.com/questions/2693021/how-to-count-javascript-array-objects
+console.log(Object.keys(nobel_prize_winners_2017.prizes).length)

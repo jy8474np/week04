@@ -131,6 +131,7 @@ let nobel_prize_winners_2017 = {
 
 // nobel_prize_winners_2017.prizes[0].laureates[0].id.forEach(function (element) {
 //     console.log(element.id)
+// })
 
 // (nobel_prize_winners_2017.prizes[0].laureates[0]).forEach(function(id) {
 //     console.log(id)
@@ -142,11 +143,28 @@ let nobel_prize_winners_2017 = {
 // console.log(test)
 // })
 
-nobel_prize_winners_2017.prizes[0].laureates.forEach(function (element) {
-    console.log(`${element.id}`)
-})
+// nobel_prize_winners_2017.prizes[0].laureates.forEach(function (element) {
+//     console.log(`${element.id}`)
+// })
 
 // TODO write code to print the names of all of the prize categories (So your output would start physics, chemistry, medicine... ).
+
+// console.log(nobel_prize_winners_2017.prizes[0].category)
+//
+// // nobel_prize_winners_2017.prizes.forEach(function (element) {
+// //     console.log(`${element.category}`)
+// })
+
 // TODO write code to print the total number of prize categories
+
+// nobel_prize_winners_2017.prizes[0].laureates.forEach(function (id) {
+//     console.log(id)
+// })
+
+// Thanks, Stack Overflow!
+// https://stackoverflow.com/questions/2693021/how-to-count-javascript-array-objects
+console.log(Object.keys(nobel_prize_winners_2017.prizes).length)
+
+
 // TODO write code to count the total number of laureates from 2017.
 //   have a good look at how the JSON is structured, and think about what loop(s) you'll need to write.

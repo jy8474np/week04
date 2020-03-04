@@ -56,11 +56,22 @@ let cats_and_owners = [
     { name: "Snoop Dogg", cat: "Miles Davis" }
 ];
 
-// TODO print Gary Oldman's cat's name
-// TODO Taylor Swift's cat is called 'Meredith'. Write code to add this data to the array.
-// TODO write a loop to print each cat owner, and their cat's name, one per line. Use the forEach style.
+// DONE print Gary Oldman's cat's name
 
+// Select "cat" from object 1 in the array to display Gary Oldman's cat's name
+console.log(cats_and_owners [1].cat)
 
+// DONE Taylor Swift's cat is called 'Meredith'. Write code to add this data to the array.
+
+// Create an object containing Taylor Swift's name and her cat's name and add it to the cats_and_owners array
+cats_and_owners[4] = {name: "Taylor Swift", cat: "Meredith"}
+
+// DONE write a loop to print each cat owner, and their cat's name, one per line. Use the forEach style.
+
+// Create a function to loop the using a ForEach
+cats_and_owners.forEach(function (element) {
+    console.log(`${element.name}'s cat is ${element.cat}`)
+})
 
 
 /* d. Use the following JSON object, describing the Nobel Prize winners in 2017.

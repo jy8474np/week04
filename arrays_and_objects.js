@@ -34,17 +34,26 @@ let rates = {
     "BGN": 1.9558,
     "BRL": 3.8959,
     "CAD": 1.5194,
+    // Add Swiss values
     "CHF": 1.1787
 };
 
 // DONE write code to add a new property for Swiss Francs. Symbol is CHF, value is 1.1787.
-// TODO if you had 100 Euros, write code to get the exchange rate from the object, then calculate
+// DONE if you had 100 Euros, write code to get the exchange rate from the object, then calculate
 //      the equivalent value in Australian Dollars (AUD)
+
+// Create a function multiplying the desired number of Euros by the exchange rate for a given
+// country within the "rates" object
+
+function convert(euro, country) {
+    let conversion = euro * country
+    return conversion
+}
+console.log(convert(100, rates.AUD).toFixed(2))
+
 // TODO write code to identify the currency symbol that has the highest exchange rate compared to Euros.
 //    In other words, identify the property with the largest value. the answer is BRL (Brazilian Real) at 3.8959 BRL to 1 Euro.
-
-
-
+// Move on and come back
 
 /* c. Use this JavaScript array of objects of cat owners, and their cats. Source, moderncat.com
  */
@@ -78,7 +87,7 @@ cats_and_owners.forEach(function (element) {
 Source http://api.nobelprize.org/v1/prize.json?year=2017
 * */
 
-// TODO print the full name of the Literature Nobel laureate.
+// DONE print the full name of the Literature Nobel laureate.
 // TODO print the ids of each of the Physics Nobel laureates. Your code should still work without modification if a laureate was added, or removed.
 // TODO write code to print the names of all of the prize categories (So your output would start physics, chemistry, medicine... ).
 // TODO write code to print the total number of prize categories
@@ -210,3 +219,6 @@ let nobel_prize_winners_2017 = {
         }
     ]
 };
+
+console.log(`The 2017 Nobel laureate for Literature was ` + (nobel_prize_winners_2017.prizes[3].laureates[0].firstname)
+    + ` ` + (nobel_prize_winners_2017.prizes[3].laureates[0].surname) +`.`)

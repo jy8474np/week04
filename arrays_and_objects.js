@@ -18,9 +18,9 @@ let iss_location = {
 };
 
 // TODO Extract the latitude value, and log it to the console.
+console.log()
 // TODO Extract the longitude value, and log it to the console.
-
-
+console.log()
 
 
 /* b. Use this JavaScript object of exchange rates relative to Euros.
@@ -33,10 +33,11 @@ let rates = {
     "AUD": 1.5417,
     "BGN": 1.9558,
     "BRL": 3.8959,
-    "CAD": 1.5194
+    "CAD": 1.5194,
+    "CHF": 1.1787
 };
 
-// TODO write code to add a new property for Swiss Francs. Symbol is CHF, value is 1.1787.
+// DONE write code to add a new property for Swiss Francs. Symbol is CHF, value is 1.1787.
 // TODO if you had 100 Euros, write code to get the exchange rate from the object, then calculate
 //      the equivalent value in Australian Dollars (AUD)
 // TODO write code to identify the currency symbol that has the highest exchange rate compared to Euros.

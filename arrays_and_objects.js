@@ -88,7 +88,7 @@ Source http://api.nobelprize.org/v1/prize.json?year=2017
 * */
 
 // DONE print the full name of the Literature Nobel laureate.
-// TODO print the ids of each of the Physics Nobel laureates. Your code should still work without modification if a laureate was added, or removed.
+// DONE print the ids of each of the Physics Nobel laureates. Your code should still work without modification if a laureate was added, or removed.
 // TODO write code to print the names of all of the prize categories (So your output would start physics, chemistry, medicine... ).
 // TODO write code to print the total number of prize categories
 // TODO write code to count the total number of laureates from 2017.
@@ -222,3 +222,8 @@ let nobel_prize_winners_2017 = {
 
 console.log(`The 2017 Nobel laureate for Literature was ` + (nobel_prize_winners_2017.prizes[3].laureates[0].firstname)
     + ` ` + (nobel_prize_winners_2017.prizes[3].laureates[0].surname) +`.`)
+
+nobel_prize_winners_2017.prizes[0].laureates.forEach(function (element) {
+    console.log(`${element.id}`)
+})
+

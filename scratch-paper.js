@@ -125,10 +125,27 @@ let nobel_prize_winners_2017 = {
 };
 
 // DONE print the full name of the Literature Nobel laureate.
-console.log(`The 2017 Nobel laureate for Literature was ` + (nobel_prize_winners_2017.prizes[3].laureates[0].firstname)
-    + ` ` + (nobel_prize_winners_2017.prizes[3].laureates[0].surname) +`.`)
+// console.log(`The 2017 Nobel laureate for Literature was ` + (nobel_prize_winners_2017.prizes[3].laureates[0].firstname)
+//     + ` ` + (nobel_prize_winners_2017.prizes[3].laureates[0].surname) +`.`)
 // TODO print the ids of each of the Physics Nobel laureates. Your code should still work without modification if a laureate was added, or removed.
-console.log()
+
+// nobel_prize_winners_2017.prizes[0].laureates[0].id.forEach(function (element) {
+//     console.log(element.id)
+
+// (nobel_prize_winners_2017.prizes[0].laureates[0]).forEach(function(id) {
+//     console.log(id)
+// })
+
+// console.log((nobel_prize_winners_2017.prizes[0].laureates.id))
+
+// (nobel_prize_winners_2017.prizes[0].laureates.id).forEach(function (test) {
+// console.log(test)
+// })
+
+nobel_prize_winners_2017.prizes[0].laureates.forEach(function (element) {
+    console.log(`${element.id}`)
+})
+
 // TODO write code to print the names of all of the prize categories (So your output would start physics, chemistry, medicine... ).
 // TODO write code to print the total number of prize categories
 // TODO write code to count the total number of laureates from 2017.

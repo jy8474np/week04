@@ -80,6 +80,8 @@
         let streetName = homeownerStreetNameInput.value
         let treeType = treeTypeSelect.value
 
+        // create additional inputs for city and zip code
+
         // DONE get the value from the input#city
         let city = cityInput.value
 
@@ -90,8 +92,10 @@
         // DONE Validate the zip code is in the range 55001 and 56763 (which checks that the zip code is in Minnesota)
         // DONE If a form element has not been completed, add an error message to the errors array (use push)
 
+        // create an empty array in which to put errors
         let errors = []
 
+        // Check all required fields for valid entries. Generate errors as needed and add them to the "errors" array
         if (!name) {
             errors.push('Please enter a name.') 
         }
@@ -108,6 +112,7 @@
             errors.push('Please enter a city.') 
         }
 
+        // Check zip code value specifically for zip code range
         if (!(zipCode >= 55001 && !zipCode <= 56763)) {
             errors.push('Please enter a MN zip code.') 
         }
@@ -120,6 +125,7 @@
         // display an alert with all of the error messages (use join)
         // and then return from this function to prevent further processing
 
+        // If errors have been added to the "errors" array, generate an alert displaying the various error messages
         if (errors.length > 0) {
             let errorMessage = errors.join('\n')
             alert(errorMessage)
@@ -127,6 +133,8 @@
         }
 
         // DONE - If there are no errors, use a template string to display an order summary in the order summary paragraph
+
+        // Use info from fields to display the order summary under that header, created separate <p> lines for legibility
         orderSummaryParagraph.innerHTML = `<p>${name}</p>
         <p>${houseNumber} ${streetName}, ${city}, MN ${zipCode}</p>
         <p>${treeType}</p>`
